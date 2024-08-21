@@ -9,7 +9,7 @@ jobs:
         id: hello
         uses: zhonghes/workflows/centos6@zhonghes-patch-1
         with:
-          who-to-greet: '中和'
+          who-to-greet: 'bash --version'
       # Use the output from the `hello` step
       - name: Get the output time
         run: echo "The time was ${{ steps.hello.outputs.time }}"
