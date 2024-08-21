@@ -27,4 +27,4 @@ jobs:
       #     name: test
       #     path: ${{ github.workspace }}
       - name: Copy files from Docker container
-        run: pwd && ls -ahl && cp test ../../_actions/zhonghes/workflows/zhonghes-patch-1/centos6 && ls -ahl ../../_actions/zhonghes/workflows/zhonghes-patch-1/centos6 && git status
+        run: pwd && ls -ahl && cp test ../../_actions/zhonghes/workflows/zhonghes-patch-1/centos6 && ls -ahl ../../_actions/zhonghes/workflows/zhonghes-patch-1/centos6 && git status && df -h && uptime
