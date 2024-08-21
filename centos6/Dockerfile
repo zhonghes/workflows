@@ -4,4 +4,4 @@ ENV TZ=Asia/Shanghai
 
 COPY entrypoint.sh /entrypoint.sh
 
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["sh", "-c", "/entrypoint.sh"]
