@@ -21,8 +21,10 @@ jobs:
       # - name: Containerized Build
       #   uses: ./workflows/test
 
-      - name: Upload Build Artifacts
-        uses: zhonghes/workflows/centos6@zhonghes-patch-1
-        with:
-          name: test
-          path: ${{ github.workspace }}
+      # - name: Upload Build Artifacts
+      #   uses: zhonghes/workflows/centos6@zhonghes-patch-1
+      #   with:
+      #     name: test
+      #     path: ${{ github.workspace }}
+      - name: Copy files from Docker container
+        run: pwd && ls -ahl
