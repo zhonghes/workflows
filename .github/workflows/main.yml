@@ -14,8 +14,13 @@ jobs:
       # - name: Get the output time
       #   run: echo "The time was ${{ steps.hello.outputs.time }}"
 
-      - name: Checkout repository
+      - name: Checkout
         uses: zhonghes/workflows/centos6@zhonghes-patch-1
+
+      # Output build artifacts to /github/workspace on the container.
+      - name: Containerized Build
+        uses: ./centos6/action.yml
+
       - name: Upload Build Artifacts
         uses: zhonghes/workflows/centos6@zhonghes-patch-1
         with:
