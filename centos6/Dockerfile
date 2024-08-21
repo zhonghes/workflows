@@ -6,4 +6,4 @@ ENV TZ=Asia/Shanghai
 
 COPY entrypoint.sh /entrypoint.sh
 
-CMD [ "bash", "--version" ]
+ENTRYPOINT ["sh", "/entrypoint.sh"]
