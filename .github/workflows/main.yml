@@ -27,4 +27,4 @@ jobs:
       #     name: test
       #     path: ${{ github.workspace }}
       - name: Copy files from Docker container
-        run: pwd && ls -ahl
+        run: pwd && ls -ahl ..
