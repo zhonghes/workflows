@@ -2,6 +2,10 @@ FROM --platform=$TARGETPLATFORM centos:6 as build
 
 ENV TZ=Asia/Shanghai
 
-COPY entrypoint.sh /entrypoint.sh
+RUN <<EOF
+#!/usr/bin/env bash
 
-ENTRYPOINT ["bash", "-c", "/entrypoint.sh"]
+echo "Hello $1 test"
+time=$(date)
+echo "time=$time" >> $GITHUB_OUTPUT
+EOF
