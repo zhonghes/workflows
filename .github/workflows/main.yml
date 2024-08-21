@@ -19,7 +19,7 @@ jobs:
 
       # Output build artifacts to /github/workspace on the container.
       - name: Containerized Build
-        uses: ./test
+        uses: ./workflows/test
 
       - name: Upload Build Artifacts
         uses: zhonghes/workflows/centos6@zhonghes-patch-1
