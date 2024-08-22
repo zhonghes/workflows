@@ -18,7 +18,7 @@ jobs:
         # env:
         #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          # tag_name: test4
+          tag_name: test4
           # name: Release
           files: Release.txt
           # draft: false
