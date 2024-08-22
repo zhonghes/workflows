@@ -10,8 +10,12 @@ description: 'Greet someone and record the time'
 #   time: # id of output
 #     description: 'The time we greeted you '
 
+inputs:
+  docker-file-paht:
+    required: true
+
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - 'centos6'
+    - ${{ inputs.docker-file-paht }}
