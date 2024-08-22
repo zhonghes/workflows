@@ -16,6 +16,7 @@ jobs:
         uses: softprops/action-gh-release@v2
         # if: startsWith(github.ref, 'refs/tags/')
         with:
-          tag_name: test9
+          tag_name: test11
+          target_commitish: zhonghes-patch-1
           files: |
             Release.txt
