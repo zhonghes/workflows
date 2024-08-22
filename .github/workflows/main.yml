@@ -13,18 +13,16 @@ jobs:
       # # Use the output from the `hello` step
       # - name: Get the output time
       #   run: echo "The time was ${{ steps.hello.outputs.time }}"
-
+      
       - name: Checkout
-        uses: zhonghes/workflows/centos6@zhonghes-patch-1
+        uses: actions/checkout@v4
 
-      # # Output build artifacts to /github/workspace on the container.
-      # - name: Containerized Build
-      #   uses: ./workflows/test
+      # Output build artifacts to /github/workspace on the container.
+      - name: Containerized Build
+        uses: ./.github/actions/my-container-action
 
       - name: Upload Build Artifacts
-        uses: zhonghes/workflows/centos6@zhonghes-patch-1
+        uses: actions/upload-artifact@v4
         with:
-          source: test
-          destination: ${{ github.workspace }}
-      # - name: Copy files from Docker container
-      #   run: pwd && ls -ahl && cp test ../../_actions/zhonghes/workflows/zhonghes-patch-1/centos6 && ls -ahl ../../_actions/zhonghes/workflows/zhonghes-patch-1/centos6 && git status && df -h && uptime
+          name: workspace_artifacts
+          path: ${{ github.workspace }}
