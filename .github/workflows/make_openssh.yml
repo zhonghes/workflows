@@ -1,12 +1,5 @@
 on: 
   push: 
-  workflow_dispatch:
-    inputs:
-      debug_enabled:
-        type: boolean
-        description: 'Run the build with tmate debugging enabled (https://github.com/marketplace/actions/debugging-with-tmate)'
-        required: false
-        default: true
 
 jobs:
   build:
@@ -18,9 +11,6 @@ jobs:
       - name: 编译 openssh
         uses: zhonghes/workflows/centos6@zhonghes-patch-1
         
-      # - name: 上传编译文件至指定目录
-      #   uses: stefanzweifel/git-auto-commit-action@v5
-      
       - name: 上传编译文件至指定目录
-        uses: peter-evans/create-pull-request@v6
-        # if: ${{ github.event_name == 'workflow_dispatch' && inputs.debug_enabled }}
+        uses: stefanzweifel/git-auto-commit-action@v5
+
