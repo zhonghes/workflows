@@ -6,7 +6,7 @@ curl -fsSL -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.cloud.tencent.com
 
 # 安装编译环境
 yum groupinstall -y "Development Tools"
-yum install -y imake rpm-build pam-devel krb5-devel zlib-devel libXt-devel libX11-devel gtk2-devel perl perl-IPC-Cmd
+yum install -y imake rpm-build pam-devel krb5-devel zlib-devel libXt-devel libX11-devel gtk2-devel perl perl-IPC-Cmd tree
 
 # 拉取 openssh-rpms 仓库
 cd "$(mktemp -d)" || echo "进入临时目录失败"
