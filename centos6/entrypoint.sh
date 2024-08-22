@@ -24,4 +24,4 @@ openssh_path="/github/workspace/centos6/$(ls | grep -oP '^openssh-\d.+(?=\.rpm$)
 mkdir -p "${openssh_path}"
 cp -a ./*.rpm "${openssh_path}"
 
-tree /github/workspace
+rm -f /github/workspace/centos6/*.rpm
