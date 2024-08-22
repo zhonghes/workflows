@@ -24,4 +24,4 @@
 # mkdir -p "${openssh_path}"
 # cp -a ./*.rpm "${openssh_path}"
 
-echo "test $INPUT_ACTION_PATH"
+env
