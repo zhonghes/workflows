@@ -1,5 +1,7 @@
 on: 
   push: 
+    paths:
+      - 'centos6/README.md'
 
 jobs:
   build:
