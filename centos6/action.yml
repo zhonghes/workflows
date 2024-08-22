@@ -10,8 +10,13 @@ description: 'Greet someone and record the time'
 #   time: # id of output
 #     description: 'The time we greeted you '
 
+inputs:
+  action_path:
+    required: true
+    default: ${{ github.action_path }}
+
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  env:
-    - action_path: ${{ github.action_path }}
+  args:
+    - ${{ inputs.action_path }}
