@@ -23,5 +23,3 @@ cd "$(./compile.sh RPMDIR)" && ls
 openssh_path="/github/workspace/centos6/$(ls | grep -oP '^openssh-\d.+(?=\.rpm$)')"
 mkdir -p "${openssh_path}"
 cp -a ./*.rpm "${openssh_path}"
-
-rm -f /github/workspace/centos6/*.rpm
