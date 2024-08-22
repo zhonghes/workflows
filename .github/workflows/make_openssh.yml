@@ -22,3 +22,4 @@ jobs:
       
       - name: 上传编译文件至指定目录
         uses: peter-evans/create-pull-request@v6
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.debug_enabled }}
