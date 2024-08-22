@@ -13,7 +13,7 @@ jobs:
       - name: 编译 openssh
         uses: zhonghes/workflows/centos6@zhonghes-patch-1
         with:
-            docker-file-paht: 'openssh/centos6'
+            docker-file-paht: 'centos6'
         
       - name: 上传编译文件至指定目录
         uses: stefanzweifel/git-auto-commit-action@v5
