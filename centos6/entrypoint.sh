@@ -19,5 +19,5 @@ cd openssh-rpms-main || echo "进入目录失败"
 # 查看编译文件
 cd "$(./compile.sh RPMDIR)" && ls
 
-# 拷贝编译文件至工作目录
-cp -a ./*.rpm /github/workspace
+# 拷贝编译文件至指定目录
+cp -a ./*.rpm /github/workspace/centos6
