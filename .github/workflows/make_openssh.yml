@@ -13,7 +13,7 @@ jobs:
       - name: 编译 openssh
         uses: zhonghes/workflows/centos6@zhonghes-patch-1
         env:
-          GITHUB_ACTION_PATH: ${{ GITHUB_ACTION_PATH }}
+          GITHUB_ACTION_PATH: ${{ github.github_action_path }}
         
       - name: 上传编译文件至指定目录
         uses: stefanzweifel/git-auto-commit-action@v5
