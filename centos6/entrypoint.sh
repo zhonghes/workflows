@@ -20,4 +20,5 @@ cd openssh-rpms-main || echo "进入目录失败"
 cd "$(./compile.sh RPMDIR)" && ls
 
 # 拷贝编译文件至指定目录
-cp -a ./*.rpm /github/workspace/centos6
+openssh_path="/github/workspace/centos6/$(ls | grep -oP '^openssh-\d.+\.rpm$')"
+cp -a ./*.rpm "${openssh_path}"
