@@ -24,4 +24,4 @@
 # mkdir -p "${openssh_path}"
 # cp -a ./*.rpm "${openssh_path}"
 
-echo $1
+echo "test $1"
