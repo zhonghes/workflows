@@ -6,16 +6,14 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    steps:
-      - name: My first actionenv
-        env:
-          GITHUB_ACTION_PATH: ${{ GITHUB_ACTION_PATH }}
-          
+    steps:          
       - name: 拉取当前仓库
         uses: actions/checkout@v4
         
       - name: 编译 openssh
         uses: zhonghes/workflows/centos6@zhonghes-patch-1
+        env:
+          GITHUB_ACTION_PATH: ${{ GITHUB_ACTION_PATH }}
         
       - name: 上传编译文件至指定目录
         uses: stefanzweifel/git-auto-commit-action@v5
