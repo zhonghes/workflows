@@ -18,7 +18,8 @@ jobs:
         # env:
         #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: test3
-          name: Demo ${{ github.ref_name }}
+          tag_name: test4
+          name: Release
+          files: Release.txt
           draft: false
           prerelease: false
