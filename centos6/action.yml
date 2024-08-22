@@ -13,5 +13,5 @@ description: 'Greet someone and record the time'
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  args:
-    - ${{ github.action_path }}
+  env:
+    - action_path: ${{ github.action_path }}
