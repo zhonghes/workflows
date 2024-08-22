@@ -12,12 +12,9 @@ jobs:
         run: echo ${{ github.sha }} > Release.txt
       - name: Test
         run: cat Release.txt
-      - name: Create Release
+      - name: Release
         uses: softprops/action-gh-release@v2
         if: startsWith(github.ref, 'refs/tags/')
         with:
-          tag_name: test7
-          # name: Release
-          files: Release.txt
-          # draft: false
-          # prerelease: false
+          files: |
+            Release.txt
