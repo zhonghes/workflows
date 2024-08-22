@@ -6,5 +6,4 @@ jobs:
     steps:
       - name: Containerized Build
         uses: zhonghes/workflows/centos6@zhonghes-patch-1
-      - name: test
-        run: cat test
+
