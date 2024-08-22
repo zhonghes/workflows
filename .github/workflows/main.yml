@@ -1,30 +1,20 @@
-on: [push]
+name: zhonghes-patch-1
+
+on: push
 
 jobs:
-  hello_world_job:
+  build:
     runs-on: ubuntu-latest
-    name: A job to say hello
     steps:
-      # - name: Hello world action step
-      #   id: hello
-      #   uses: zhonghes/workflows/centos6@zhonghes-patch-1
-      #   with:
-      #     who-to-greet: 'bash --version'
-      # # Use the output from the `hello` step
-      # - name: Get the output time
-      #   run: echo "The time was ${{ steps.hello.outputs.time }}"
-      
       - name: Checkout
         uses: actions/checkout@v4
-      - name: look dir
-        run: tree .
-        
-      # Output build artifacts to /github/workspace on the container.
-      - name: Containerized Build
-        uses: ./centos6
-
-      - name: Upload Build Artifacts
-        uses: actions/upload-artifact@v4
+      - name: Build
+        run: echo ${{ github.sha }} > Release.txt
+      - name: Test
+        run: cat Release.txt
+      - name: Release
+        uses: softprops/action-gh-release@v2
+        if: startsWith(github.ref, 'refs/tags/')
         with:
-          name: workspace_artifacts
-          path: ${{ github.workspace }}/test
+          files: |
+            test
