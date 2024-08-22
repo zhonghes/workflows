@@ -16,7 +16,9 @@ jobs:
       
       - name: Checkout
         uses: actions/checkout@v4
-
+      - name: look dir
+        run: ls -ahl ./.github && ls -ahl ./.github/actions
+        
       # Output build artifacts to /github/workspace on the container.
       - name: Containerized Build
         uses: ./.github/actions/my-container-action
