@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-pwd
+pwd && ls -ahl
 
 # # 复用腾讯云 centos6 yum 源
 # rm -f /etc/yum.repos.d/*.repo
