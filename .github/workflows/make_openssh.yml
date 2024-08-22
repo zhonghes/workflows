@@ -7,6 +7,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: My first actionenv
+        env:
+          GITHUB_ACTION_PATH: ${{ GITHUB_ACTION_PATH }}
+          
       - name: 拉取当前仓库
         uses: actions/checkout@v4
         
