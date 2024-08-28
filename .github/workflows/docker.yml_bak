@@ -1,0 +1,9 @@
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Containerized Build
+        uses: zhonghes/workflows/centos6@zhonghes-patch-1
+

@@ -1,0 +1,13 @@
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Containerized Build
+        uses: ./centos6
+
+      - uses: stefanzweifel/git-auto-commit-action@v5
